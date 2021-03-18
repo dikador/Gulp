@@ -1,0 +1,202 @@
+// !checkbox который перемещается--------------------------------------------------------------
+
+.check__checkbox-accept {
+   margin: 0 auto;
+   margin-top: 200px;
+   transition: 0.3s ease;
+   position: relative;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding-left: 60px;
+   width: 470px;
+   text-align: center;
+   cursor: pointer !important;
+   z-index: 1000;
+   input {
+      display: none;
+   }
+
+   p {
+      cursor: pointer !important;
+      font-family: "Roboto";
+      font-size: 18px;
+      line-height: 150%;
+
+      color: #fff;
+      user-select: none;
+   }
+}
+
+//todo Зона по которой перемещается checkbox
+
+.check__checkbox-accept::before {
+   position: absolute;
+   content: "";
+   width: 45px;
+   height: 20px;
+   border-radius: 15px;
+   background-color: rgb(255, 136, 0);
+   top: 0;
+   left: 0;
+}
+
+//todo место куда переместится круглишок при нажатии
+
+.check__checkbox-accept.active::after {
+   left: 22px;
+   transition: 0.2s ease;
+}
+
+//todo стили самого круглишка внутри чекбокса
+
+.check__checkbox-accept::after {
+   content: "";
+   position: absolute;
+   width: 18px;
+   height: 17px;
+   border-radius: 50%;
+   left: 2px;
+   top: 1.4px;
+   background: #ffffff;
+   transition: 0.2s ease;
+   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 3px 1px rgba(0, 0, 0, 0.06);
+}
+
+// !Квадратный checkbox который ввиде галочки--------------------------------------------------------------
+
+// todo: стили всего чекбокса
+
+.checkbox-accept__quad {
+   text-align: center;
+   margin-top: 50px;
+   user-select: none;
+}
+
+// todo: стили для текста рядом с чекбоксом
+
+.checkbox__quad-accept_text {
+   font-size: 16px;
+   font-weight: 500;
+}
+
+// todo: стили текста чекбокса
+
+input.input-checkbox:checked + label,
+input.input-checkbox:not(:checked) + label {
+   display: inline-block;
+   position: relative;
+   padding-left: 28px;
+   line-height: 20px;
+   cursor: pointer;
+}
+
+// todo: стили самого контейнера чекбокса
+
+input.input-checkbox:checked + label:before,
+input.input-checkbox:not(:checked) + label:before {
+   content: "";
+   position: absolute;
+   left: 0px;
+   top: 0px;
+   width: 15px;
+   height: 15px;
+   border: 1px solid rgb(255, 136, 0);
+   background-color: #ffffff;
+}
+
+// todo: закругление контейнера чекбокса
+
+input.input-checkbox:checked + label:before,
+input.input-checkbox:not(:checked) + label:before {
+   border-radius: 2px;
+}
+
+// todo: это просто нужно
+
+input.input-checkbox:checked + label:after,
+input.input-checkbox:not(:checked) + label:after,
+input.input-radio-block:checked + label:after,
+input.input-radio-block:not(:checked) + label:after {
+   content: "";
+   position: absolute;
+   transition: all 0.2s ease;
+}
+
+.input-checkbox {
+   display: none;
+}
+
+// todo: стили для галочки чекбокса
+
+input.input-checkbox:checked + label:after,
+input.input-checkbox:not(:checked) + label:after {
+   left: 1.3px;
+   top: -0.3px;
+   width: 15.6px;
+   height: 10.1px;
+   border-radius: 1px;
+   border-left: 4px solid rgb(255, 136, 0);
+   border-bottom: 4px solid rgb(255, 136, 0);
+   transform: rotate(-45deg);
+}
+
+// !Радио checkbox--------------------------------------------------------------
+
+// todo: стили для контейнера чекбокса
+
+input.input-radio-block:checked + label:before,
+input.input-radio-block:not(:checked) + label:before {
+   content: "";
+   position: absolute;
+   left: 0px;
+   top: 0px;
+   width: 15px;
+   height: 15px;
+   border: 1px solid rgb(255, 136, 0);
+   background-color: #ffffff;
+   border-radius: 50%;
+}
+
+// todo: стили для круглишка чекбокса
+
+input.input-radio-block:checked + label:after,
+input.input-radio-block:not(:checked) + label:after {
+   left: 3px;
+   top: 3px;
+   width: 9px;
+   height: 9px;
+   border-radius: 100%;
+   background-color: rgb(255, 136, 0);
+}
+
+// todo: стили для круглишка чекбокса
+
+input.input-checkbox:not(:checked) + label:after,
+input.input-radio-block:not(:checked) + label:after {
+   opacity: 0;
+   border-radius: 50%;
+}
+
+// todo: стили для текста радио чекбокса
+
+input.input-radio-block:checked + label,
+input.input-radio-block:not(:checked) + label {
+   display: inline-block;
+   position: relative;
+   padding-left: 22px;
+   line-height: 20px;
+   font-size: 16px;
+   font-weight: 500;
+   margin-right: 20px;
+   cursor: pointer;
+}
+
+input.input-checkbox:checked + label:after,
+input.input-radio-block:checked + label:after {
+   opacity: 1;
+}
+
+.input-radio-block {
+   display: none;
+}
