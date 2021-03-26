@@ -4,7 +4,7 @@ $(document).ready(function () {
 
    $('.button').click(function (e) {
       e.preventDefault()
-      let nameInput = $('#Name').val().trim();
+      let nameInput = $('#name').val().trim();
       let passInput = $('#pass').val().trim();
 
       let phoneInput = $('#phoneNumber').val().trim();
@@ -18,9 +18,9 @@ $(document).ready(function () {
       let messInput = $('#message').val().trim();
 
       if (nameInput.length < 2) {
-         $('#Name').addClass('input__forms-val_error');
+         $('#name').addClass('input__forms-val_error');
       } else {
-         $('#Name').removeClass('input__forms-val_error');
+         $('#name').removeClass('input__forms-val_error');
       }
 
       if (phoneInput.length < 8) {
