@@ -28,7 +28,7 @@
     visibility: hidden;
     opacity: 0;
     transition: 0.7s;
-    perspective: 500;
+    perspective: 500px;
 
     &.open {
         opacity: 1;
