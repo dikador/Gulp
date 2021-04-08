@@ -45,7 +45,7 @@ $(document).ready(function () {
 });
 
 
-// !Прилипание блока в момент доскролливания до него
+// !Прилипание блока в момент доскролливания до него===================================================================
 
 $(document).ready(function () {
    var stickyNavTop = $('.nav').offset().top;
@@ -65,3 +65,35 @@ $(document).ready(function () {
       stickyNav();
    });
 });
+
+
+// !Скрывает хедер при скролле вниз=============================================================================
+
+
+let scroll_top = window.pageYOffset,
+   is_hidden = false;
+
+let enabled = true;
+
+let headerT = document.querySelector('.header');
+
+window.addEventListener('scroll', function (scope) {
+   let new_scroll_top = window.pageYOffset,
+      menu_height = headerT.clientHeight;
+
+   move_down = (new_scroll_top > scroll_top);
+
+   if (move_down) {
+      if (!is_hidden && (new_scroll_top > menu_height)) {
+         is_hidden = true;
+         headerT.classList.add('hide');
+      }
+   } else {
+      if (is_hidden && enabled) {
+         is_hidden = false;
+         headerT.classList.remove('hide');
+      }
+   }
+
+   scroll_top = new_scroll_top;
+})
