@@ -1,18 +1,30 @@
-$(document).ready(function () {
-   $.each($('.check__checkbox-accept'), function (index, val) {
-      if ($(this).find('input').prop('checked') == true) {
-         $(this).addClass('active');
-      }
-   });
+let checkbox = document.querySelectorAll('.check-accept')
+let wrapCheckbox = document.querySelectorAll('.check__checkbox-accept');
 
-   $('.check__checkbox-accept').click(function (e) {
-      e.preventDefault();
-      if ($(this).hasClass('active')) {
-         $(this).find('input').prop('checked', false)
-      } else {
-         $(this).find('input').prop('checked', true)
-         // alert('asdasd')
+if (checkbox.length > 0) {
+
+   for (let index = 0; index < checkbox.length; index++) {
+      const element = checkbox[index];
+
+      if (element.checked) {
+         wrapCheckbox.classList.add('active');
       }
-      $(this).toggleClass('active')
-   });
-});
+   }
+}
+
+for (let index = 0; index < wrapCheckbox.length; index++) {
+   const element = wrapCheckbox[index];
+
+   element.addEventListener('click', function (e) {
+      e.preventDefault;
+      console.log(this);
+      if (this.classList.contains('active')) {
+         this.querySelector(".check-accept").checked = false;
+      } else {
+         this.querySelector(".check-accept").checked = true;
+      }
+
+      this.classList.toggle("active");
+   })
+
+}
