@@ -1,14 +1,17 @@
-$(document).ready(function () {
-   $('a[href^="#"').not('.tabs-link').on('click', function () {
+document.querySelectorAll('.smooth-scroll').forEach(link => {
 
-      let href = $(this).attr('href');
+   link.addEventListener('click', function (e) {
+      e.preventDefault();
+      let href = this.getAttribute('href').substring(1);
 
-      $('html, body').animate({
-         scrollTop: $(href).offset().top
-      }, {
-         duration: 420,   // по умолчанию «400» 
-         easing: "swing" // по умолчанию «swing» 
-      })
-      return false;
+      const scrollTarget = document.getElementById(href);
+      const topOffset = 0;
+      const elementPosition = scrollTarget.getBoundingClientRect().top;
+      const offsetPosition = elementPosition - topOffset;
+
+      window.scrollBy({
+         top: offsetPosition,
+         behavior: 'smooth'
+      });
    });
 });
