@@ -173,9 +173,17 @@
 
 // todo: Таб справа--------------------------------------------------------------------------------------
 
+.wrap {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+}
+
 #tabs {
-   margin: 10px 0;
+   margin: 70px 0;
    overflow: hidden;
+   width: 800px;
 
    .tabs-nav {
       width: 150px;
@@ -284,6 +292,11 @@
 .acord {
    display: flex;
    flex-direction: column;
+   margin-right: 50px;
+
+   &:last-child {
+      margin-right: 0px;
+   }
 }
 
 .acord__item {
@@ -292,6 +305,8 @@
    background-color: rgb(207, 207, 207);
    overflow: hidden;
    margin-top: 30px;
+
+   overflow: hidden;
 }
 
 .acord__top {
@@ -333,10 +348,15 @@
 }
 
 .acord__bot {
-   display: none;
+   height: 0;
+   transition: height, ease-in-out 0.4s;
+   font-size: 0;
 
    &.active__acord {
-      display: block;
+      height: 100%;
+      padding: 20px;
+
+      font-size: 15px;
    }
 }
 
@@ -346,8 +366,11 @@
    font-weight: 500;
 }
 
-.acord__bot {
-   padding: 20px;
+.wrap {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
 }
 
 // !Акордион================================================================================
