@@ -1,175 +1,175 @@
-// !Обычный таб===============================================================================
+// // !Обычный таб===============================================================================
 
-// todo: Таб сверху--------------------------------------------------------------------------------------
+// // todo: Таб сверху--------------------------------------------------------------------------------------
 
-#tabs {
-   margin: 10px 0;
+// #tabs {
+//    margin: 10px 0;
 
-   .tabs-nav {
-      overflow: hidden;
-      margin: 0;
-      padding: 0;
-   }
-   .tabs-nav li {
-      display: block;
-      float: left;
-      padding: 0;
-      list-style: none;
-   }
-   .tabs-nav a {
-      display: block;
-      padding: 10px 20px;
-      border-top: 1px solid #ccc;
-      border-bottom: 1px solid #ccc;
-      border-left: 1px solid #ccc;
-      background: #fbfbfb;
-      font-size: 16px;
-      text-decoration: none;
-      text-align: center;
-      color: #999;
-   }
-   .tabs-nav li:first-child a {
-      border-radius: 5px 0 0 0;
-   }
-   .tabs-nav li:last-child a {
-      display: block;
-      border-right: 1px solid #ccc;
-      border-radius: 0 5px 0 0;
-   }
-   .tabs-nav a.active {
-      border-bottom: 1px solid #fff;
-      background: #fff;
-      color: #000;
-   }
-   .tabs-items {
-      border: 1px solid #ccc;
-      border-radius: 0 5px 5px 5px;
-      background: #fff;
-      margin: -1px 0 0 0;
-   }
-   .tabs-item {
-      padding: 15px;
-   }
-}
+//    .tabs-nav {
+//       overflow: hidden;
+//       margin: 0;
+//       padding: 0;
+//    }
+//    .tabs-nav li {
+//       display: block;
+//       float: left;
+//       padding: 0;
+//       list-style: none;
+//    }
+//    .tabs-nav a {
+//       display: block;
+//       padding: 10px 20px;
+//       border-top: 1px solid #ccc;
+//       border-bottom: 1px solid #ccc;
+//       border-left: 1px solid #ccc;
+//       background: #fbfbfb;
+//       font-size: 16px;
+//       text-decoration: none;
+//       text-align: center;
+//       color: #999;
+//    }
+//    .tabs-nav li:first-child a {
+//       border-radius: 5px 0 0 0;
+//    }
+//    .tabs-nav li:last-child a {
+//       display: block;
+//       border-right: 1px solid #ccc;
+//       border-radius: 0 5px 0 0;
+//    }
+//    .tabs-nav a.active {
+//       border-bottom: 1px solid #fff;
+//       background: #fff;
+//       color: #000;
+//    }
+//    .tabs-items {
+//       border: 1px solid #ccc;
+//       border-radius: 0 5px 5px 5px;
+//       background: #fff;
+//       margin: -1px 0 0 0;
+//    }
+//    .tabs-item {
+//       padding: 15px;
+//    }
+// }
 
-// todo: Таб на всю ширину сверху--------------------------------------------------------------------------------------
+// // todo: Таб на всю ширину сверху--------------------------------------------------------------------------------------
 
-#tabs {
-   margin: 10px 0;
+// #tabs {
+//    margin: 10px 0;
 
-   .tabs-nav {
-      display: table;
-      margin: 0;
-      padding: 0;
-      width: 100%;
-   }
-   .tabs-nav li {
-      display: table-cell;
-      float: none;
-      margin: 0;
-      padding: 0;
-   }
-   .tabs-nav a {
-      display: block;
-      padding: 10px 20px;
-      border-top: 1px solid #ccc;
-      border-bottom: 1px solid #ccc;
-      border-left: 1px solid #ccc;
-      background: #fbfbfb;
-      font-size: 16px;
-      text-decoration: none;
-      text-align: center;
-      color: #999;
-   }
-   .tabs-nav li:first-child a {
-      border-radius: 5px 0 0 0;
-   }
-   .tabs-nav li:last-child a {
-      display: block;
-      border-right: 1px solid #ccc;
-      border-radius: 0 5px 0 0;
-   }
-   .tabs-nav a.active {
-      border-bottom: 1px solid #fff;
-      background: #fff;
-      color: #000;
-   }
-   .tabs-items {
-      border: 1px solid #ccc;
-      border-top: none;
-      border-radius: 0 0 5px 5px;
-      background: #fff;
-   }
-   .tabs-item {
-      padding: 15px;
-   }
-}
+//    .tabs-nav {
+//       display: table;
+//       margin: 0;
+//       padding: 0;
+//       width: 100%;
+//    }
+//    .tabs-nav li {
+//       display: table-cell;
+//       float: none;
+//       margin: 0;
+//       padding: 0;
+//    }
+//    .tabs-nav a {
+//       display: block;
+//       padding: 10px 20px;
+//       border-top: 1px solid #ccc;
+//       border-bottom: 1px solid #ccc;
+//       border-left: 1px solid #ccc;
+//       background: #fbfbfb;
+//       font-size: 16px;
+//       text-decoration: none;
+//       text-align: center;
+//       color: #999;
+//    }
+//    .tabs-nav li:first-child a {
+//       border-radius: 5px 0 0 0;
+//    }
+//    .tabs-nav li:last-child a {
+//       display: block;
+//       border-right: 1px solid #ccc;
+//       border-radius: 0 5px 0 0;
+//    }
+//    .tabs-nav a.active {
+//       border-bottom: 1px solid #fff;
+//       background: #fff;
+//       color: #000;
+//    }
+//    .tabs-items {
+//       border: 1px solid #ccc;
+//       border-top: none;
+//       border-radius: 0 0 5px 5px;
+//       background: #fff;
+//    }
+//    .tabs-item {
+//       padding: 15px;
+//    }
+// }
 
-// todo: Таб слева--------------------------------------------------------------------------------------
+// // todo: Таб слева--------------------------------------------------------------------------------------
 
-#tabs {
-   margin: 10px 0;
-   overflow: hidden;
+// #tabs {
+//    margin: 10px 0;
+//    overflow: hidden;
 
-   .tabs-nav {
-      width: 150px;
-      float: left;
-      overflow: hidden;
-      margin: 0;
-      padding: 0;
-      position: relative;
-   }
-   .tabs-nav:after {
-      content: "";
-      display: inline-block;
-      width: 1px;
-      height: 1px;
-      background: #ccc;
-      position: absolute;
-      top: 0px;
-      right: 0px;
-   }
-   .tabs-nav li {
-      display: block;
-      padding: 0;
-      margin: 0;
-   }
-   .tabs-nav a {
-      display: block;
-      padding: 10px 20px;
-      width: 100%;
-      box-sizing: border-box;
-      border-top: 1px solid #ccc;
-      border-right: 1px solid #ccc;
-      border-left: 1px solid #ccc;
-      background: #fbfbfb;
-      font-size: 16px;
-      text-decoration: none;
-      color: #999;
-   }
-   .tabs-nav li:first-child a {
-      border-radius: 5px 0 0 0;
-   }
-   .tabs-nav li:last-child a {
-      border-bottom: 1px solid #ccc;
-      border-radius: 0 0 0 5px;
-   }
-   .tabs-nav a.active {
-      border-right: 1px solid #fff;
-      background: #fff;
-      color: #000;
-   }
-   .tabs-items {
-      margin-left: 149px;
-      background: #fff;
-   }
-   .tabs-item {
-      padding: 15px;
-      border: 1px solid #ccc;
-      border-radius: 0 5px 5px 0;
-      min-height: 160px;
-   }
-}
+//    .tabs-nav {
+//       width: 150px;
+//       float: left;
+//       overflow: hidden;
+//       margin: 0;
+//       padding: 0;
+//       position: relative;
+//    }
+//    .tabs-nav:after {
+//       content: "";
+//       display: inline-block;
+//       width: 1px;
+//       height: 1px;
+//       background: #ccc;
+//       position: absolute;
+//       top: 0px;
+//       right: 0px;
+//    }
+//    .tabs-nav li {
+//       display: block;
+//       padding: 0;
+//       margin: 0;
+//    }
+//    .tabs-nav a {
+//       display: block;
+//       padding: 10px 20px;
+//       width: 100%;
+//       box-sizing: border-box;
+//       border-top: 1px solid #ccc;
+//       border-right: 1px solid #ccc;
+//       border-left: 1px solid #ccc;
+//       background: #fbfbfb;
+//       font-size: 16px;
+//       text-decoration: none;
+//       color: #999;
+//    }
+//    .tabs-nav li:first-child a {
+//       border-radius: 5px 0 0 0;
+//    }
+//    .tabs-nav li:last-child a {
+//       border-bottom: 1px solid #ccc;
+//       border-radius: 0 0 0 5px;
+//    }
+//    .tabs-nav a.active {
+//       border-right: 1px solid #fff;
+//       background: #fff;
+//       color: #000;
+//    }
+//    .tabs-items {
+//       margin-left: 149px;
+//       background: #fff;
+//    }
+//    .tabs-item {
+//       padding: 15px;
+//       border: 1px solid #ccc;
+//       border-radius: 0 5px 5px 0;
+//       min-height: 160px;
+//    }
+// }
 
 // todo: Таб справа--------------------------------------------------------------------------------------
 
@@ -180,7 +180,7 @@
    width: 100%;
 }
 
-#tabs {
+.tabs {
    margin: 70px 0;
    overflow: hidden;
    width: 800px;
@@ -242,9 +242,13 @@
       border: 1px solid #ccc;
       border-radius: 5px 0 0 5px;
       min-height: 160px;
+      display: none;
+
+      &.active {
+         display: block;
+      }
    }
 }
-
 // !Обычный таб===============================================================================
 
 // ?Таб переключатель===============================================================================

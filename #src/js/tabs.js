@@ -1,21 +1,29 @@
 // !Обычный таб ===============================================================================
 
-$(function () {
-   var tab = $('#tabs .tabs-items > div');
-   let a = tab.hide().filter(':first').show();
+document.querySelectorAll('.tabs').forEach(tabs => {
 
-   // Клики по вкладкам.
-   $('#tabs .tabs-nav a').click(function () {
-      tab.hide();
-      tab.filter(this.hash).show();
-      $('#tabs .tabs-nav a').removeClass('active');
-      $(this).addClass('active');
-      return false;
-   }).filter(':first').click();
+   let tab = tabs.querySelectorAll('.tabs > .tabs-items > div');
+   let tab_link = tabs.querySelectorAll('.tabs-link');
 
-   // Клики по якорным ссылкам.
-   $('.tabs-target').click(function () {
-      $('#tabs .tabs-nav a[href=' + $(this).data('id') + ']').click();
+   tab_link.forEach(element2 => {
+      element2.addEventListener('click', () => {
+
+         for (let index = 0; index < tab_link.length; index++) {
+            const element = tab_link[index];
+            element.classList.remove('active')
+         }
+         element2.classList.add('active');
+
+         let elementHref = element2.getAttribute('href').substring(1);
+
+         const tabElement = document.getElementById(elementHref);
+
+         for (let index = 0; index < tab.length; index++) {
+            const el = tab[index];
+            el.classList.remove('active');
+         };
+         tabElement.classList.add('active')
+      })
    });
 });
 
