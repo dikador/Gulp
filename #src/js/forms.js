@@ -35,7 +35,7 @@ function maskPhone(selector, masked = '+7 (___) ___-__-__') {
    }
 }
 
-maskPhone('#phoneNumber', '+7(___) ___ - ____');
+maskPhone('#phoneNumber', '+7(___)___-____');
 
 
 document.querySelector('.button').addEventListener("click", function (e) {
@@ -54,6 +54,7 @@ document.querySelector('.button').addEventListener("click", function (e) {
 
    let messInput = document.querySelector('#message').value;
 
+   console.log(phoneInput);
 
 
    if (nameInput.length < 2) {
