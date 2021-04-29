@@ -2,7 +2,7 @@
 // let rename = require('gulp-rename');
 
 let project_folder = require("path").basename(__dirname);
-let source_folder = "#src";
+let source_folder = "src";
 
 let fs = require('fs');
 
@@ -47,8 +47,6 @@ let { src, dest } = require('gulp'),
     ttf2woff = require('gulp-ttf2woff'),
     ttf2woff2 = require('gulp-ttf2woff2'),
     fonter = require('gulp-fonter');
-
-
 
 
 function html() {
