@@ -4,7 +4,8 @@
   "description": "Сборка gulp",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "NODE_ENV=development http-server -a lvh.me -p 3500 & gulp",
+    "build": "NODE_ENV=production gulp build"
   },
   "author": "Fls",
   "license": "ISC",
@@ -28,5 +29,10 @@
     "gulp-webp-html": "^1.0.2",
     "gulp-webpcss": "^1.1.1",
     "webp-converter": "^2.2.3"
+  },
+  "dependencies": {
+    "gulp-cheerio": "^1.0.0",
+    "gulp-replace": "^1.1.2",
+    "gulp-svgmin": "^3.0.0"
   }
 }

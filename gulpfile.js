@@ -1,8 +1,8 @@
-// let autoPrefixer = require('gulp-autoprefixer');
-// let rename = require('gulp-rename');
+let autoPrefixer = require('gulp-autoprefixer');
+let rename = require('gulp-rename');
 
 let project_folder = require("path").basename(__dirname);
-let source_folder = "src";
+let source_folder = "#src";
 
 let fs = require('fs');
 
@@ -19,6 +19,7 @@ let path = {
         css: source_folder + "/scss/style.scss",
         js: source_folder + "/js/*.js",
         img: source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
+        svG: source_folder + "/img/**/*.svg",
         fonts: source_folder + "/fonts/*.ttf",
     },
     watch: {
@@ -36,17 +37,19 @@ let { src, dest } = require('gulp'),
     fileinclude = require("gulp-file-include"),
     del = require("del"),
     scss = require("gulp-sass"),
-    autoprefixer = require('gulp-autoprefixer'),
     group_media = require("gulp-group-css-media-queries"),
     clean_css = require("gulp-clean-css"),
-    rename = require("gulp-rename"),
     uglify = require('gulp-uglify-es').default,
     imagemin = require('gulp-imagemin'),
     webp = require('gulp-webp'),
     webphtml = require('gulp-webp-html'),
     ttf2woff = require('gulp-ttf2woff'),
     ttf2woff2 = require('gulp-ttf2woff2'),
-    fonter = require('gulp-fonter');
+    svgSprite = require('gulp-svg-sprite'),
+    svgmin = require('gulp-svgmin'),
+    cheerio = require('gulp-cheerio'),
+    replace = require('gulp-replace');
+fonter = require('gulp-fonter');
 
 
 function html() {
@@ -69,7 +72,7 @@ function css() {
             group_media()
         )
         .pipe(
-            autoprefixer({
+            autoPrefixer({
                 grid: true,
                 overrideBrowserslist: ["last 5 versions"],
                 cascade: true
@@ -85,6 +88,7 @@ function css() {
         .pipe(dest(path.build.css))
         .pipe(browsersync.stream())
 }
+
 
 function images() {
     return src(path.src.img)
@@ -144,6 +148,33 @@ function browserSync(params) {
     })
 }
 
+function svgSpries() {
+    return gulp.src(path.src.svG)
+        .pipe(svgmin({
+            js2svg: {
+                pretty: true
+            }
+        }))
+        .pipe(cheerio({
+            run: function ($) {
+                $('[fill]').removeAttr('fill');
+                $('[stroke]').removeAttr('stroke');
+                $('[style]').removeAttr('style');
+                $('style').remove();
+            },
+            parserOptions: { xmlMode: true }
+        }))
+        .pipe(replace('&gt;', '>'))
+        .pipe(svgSprite({
+            mode: {
+                symbol: {
+                    sprite: "sprite.svg",
+                }
+            }
+        }))
+        .pipe(dest(path.build.img));
+};
+
 
 gulp.task('otf2ttf', function () {
     return src([source_folder + "/fonts/*.otf"])
@@ -174,17 +205,15 @@ function fontsStyle(params) {
     }
 }
 
-
-
 function cb() {
 
 }
-
 
 function watchFiles(params) {
     gulp.watch([path.watch.html], html);
     gulp.watch([path.watch.css], css);
     gulp.watch([path.watch.img], images);
+    gulp.watch([path.watch.img], svgSpries);
     gulp.watch([path.watch.js], js);
 }
 
@@ -192,11 +221,10 @@ function clean(params) {
     return del(path.clean);
 }
 
-
-let build = gulp.series(clean, gulp.parallel(js, css, html, images, fonts), fontsStyle);
+let build = gulp.series(clean, gulp.parallel(js, css, html, images, svgSpries, fonts), fontsStyle);
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
-
+exports.svg = svgSpries;
 exports.fontsStyle = fontsStyle;
 exports.fonts = fonts;
 exports.images = images;
